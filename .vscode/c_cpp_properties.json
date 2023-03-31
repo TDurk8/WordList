@@ -10,11 +10,15 @@
             "includePath": [
                 "c:/Apps/Arduino/WordList/include",
                 "c:/Apps/Arduino/WordList/src",
+                "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_Parola/src",
+                "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_MAXPanel/src",
+                "c:/Apps/Arduino/WordList/.pio/libdeps/uno/avr-debugger/avr8-stub",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/variants/standard",
+                "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_MAX72XX/src",
+                "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 ""
@@ -24,11 +28,15 @@
                 "path": [
                     "c:/Apps/Arduino/WordList/include",
                     "c:/Apps/Arduino/WordList/src",
+                    "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_Parola/src",
+                    "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_MAXPanel/src",
+                    "c:/Apps/Arduino/WordList/.pio/libdeps/uno/avr-debugger/avr8-stub",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "c:/Apps/Arduino/WordList/.pio/libdeps/uno/MD_MAX72XX/src",
+                    "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     "C:/Users/Tim/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     ""
