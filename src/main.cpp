@@ -13,7 +13,7 @@
 // need to be adapted
 #define CLK_PIN   13  // or SCK
 #define DATA_PIN  11  // or MOSI
-#define CS_PIN    10  // or SS
+#define CS_PIN    3   // or SS
 
 // Uncomment according to your hardware type
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
@@ -24,36 +24,54 @@
 MD_Parola myDisplay = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
 
 const char* wordList[]= {"TIM",   "MOM",  "DAD",  "JENNA","COLD",
-                       "HOT",   "SNOW", "RAIN", "ON",   "OFF",
+                         "HOT",   "SNOW", "RAIN", "ON",   "OFF",
                        "SANTA", "FISH", "STRAW","ELSA", "POOP"};
 //sizeof gets # of bytes. 
 //so total array bytes / one element bytes. 
 //(ex: 80 bytes / 8 bytes = 10 elements)
 const size_t wordListSize = sizeof(wordList) / sizeof (wordList[0]);  
 
+/* Button */
+const int buttonPin = 2;
+int buttonState     = 0;
+int lastButtonState = 0;
+
+
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(9600); 
   // initialize LED digital pin as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(buttonPin, INPUT);
+
+  // Intialize the object
+	myDisplay.begin();
+
+	// Set the intensity (brightness) of the display (0-15)
+	myDisplay.setIntensity(0);
+
+	// Clear the display
+	myDisplay.displayClear();
 }
 
 void printRandomWord(){
-  Serial.println(wordList[random(wordListSize)]);
+  String randoWord = wordList[random(wordListSize)];
+  Serial.println(randoWord);
+  myDisplay.setTextAlignment(PA_CENTER);
+	myDisplay.print(randoWord);
+}
+
+boolean buttonPushed()
+{
+  delay(10);
+  return (digitalRead(buttonPin)>0);
 }
 
 void loop()
 {
-  printRandomWord();
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-
-  // wait for a second
-  delay(100);
-
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
-
-   // wait for a second
-  delay(100);
+  buttonState = digitalRead(buttonPin);
+  if ((buttonState != lastButtonState) && (buttonState == LOW)){
+      printRandomWord();
+  }
+  delay(50);
+  lastButtonState = buttonState;
 }
